@@ -1,0 +1,122 @@
+/* ========== PROBLEM SELECTOR ========== */
+
+.problem-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #21262d;
+}
+
+.radio-card:hover {
+  border-color: #58a6ff;
+  background: #262c36;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+}
+
+.radio-card input {
+  display: none;
+}
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #6e7681;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.radio-card:hover .radio-custom {
+  border-color: #58a6ff;
+}
+
+.radio-card input:checked + .radio-custom {
+  border-color: #238636;
+  background-color: #238636;
+  box-shadow: 0 0 0 3px rgba(63, 185, 80, 0.2);
+}
+
+.radio-card input:checked + .radio-custom::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.label-text {
+  font-family: monospace;
+  font-size: 13px;
+  word-break: break-word;
+  color: #8b949e;
+  transition: all 0.2s ease;
+}
+
+.radio-card input:checked ~ .label-text {
+  color: #3fb950;
+  font-weight: 600;
+}
+
+/* ========== DARK MODE ========== */
+
+body.dark-mode .radio-card {
+  background: #21262d;
+  border-color: #30363d;
+}
+
+body.dark-mode .radio-card:hover {
+  background: #262c36;
+  border-color: #58a6ff;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+}
+
+body.dark-mode .radio-custom {
+  border-color: #6e7681;
+}
+
+body.dark-mode .radio-card:hover .radio-custom {
+  border-color: #58a6ff;
+}
+
+body.dark-mode .radio-card input:checked + .radio-custom {
+  border-color: #238636;
+  background-color: #238636;
+  box-shadow: 0 0 0 3px rgba(63, 185, 80, 0.2);
+}
+
+body.dark-mode .label-text {
+  color: #8b949e;
+}
+
+body.dark-mode .radio-card input:checked ~ .label-text {
+  color: #3fb950;
+  font-weight: 600;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .radio-card {
+    padding: 10px 12px;
+  }
+
+  .label-text {
+    font-size: 12px;
+  }
+}
