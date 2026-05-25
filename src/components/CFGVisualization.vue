@@ -13,29 +13,31 @@ const CFG_DATA = {
     1: {
         startSymbol: 'S',
         productions: [
-            { lhs: 'S', alts: ['ABCDEF'] },
-            { lhs: 'A', alts: ['b', 'aa', 'ab'] },
-            { lhs: 'B', alts: ['λ', 'aB', 'bB'] },
-            { lhs: 'C', alts: ['λ', 'bbC', 'abaC', 'abC'] },
-            { lhs: 'D', alts: ['aaa', 'bbb'] },
-            { lhs: 'E', alts: ['a', 'b'] },
-            { lhs: 'F', alts: ['λ', 'aF', 'bF'] },
+            { lhs: 'S', alts: ['A B C D E (aba) F (bb) G F G'] },
+            { lhs: 'A', alts: ['bab', 'bbb'] },
+            { lhs: 'B', alts: ['bB', 'λ'] },
+            { lhs: 'C', alts: ['aC', 'λ'] },
+            { lhs: 'D', alts: ['C', 'B'] },
+            { lhs: 'E', alts: ['abE', 'λ'] },
+            { lhs: 'F', alts: ['babF', 'abaF', 'λ'] },
+            { lhs: 'G', alts: ['aG', 'bG', 'λ'] },
         ],
         terminals: ['a', 'b', 'ε'],
         nonTerminals: ['S', 'A', 'B', 'C', 'D', 'E', 'F']
     },
     2: {
-        startSymbol: 'S',
+        startSymbol: 'S', //changed to current problem for group 
         productions: [
-            { lhs: 'S', alts: ['ABACDEA'] },
-            { lhs: 'A', alts: ['0A', '1A', 'λ'] },
-            { lhs: 'B', alts: ['11', '00', '101', '010'] },
-            { lhs: 'C', alts: ['11', '00'] },
-            { lhs: 'D', alts: ['CD', '101D', 'λ'] },
-            { lhs: 'E', alts: ['1', '0'] },
+            { lhs: 'S', alts: ['A B C D A E A F'] },
+            { lhs: 'A', alts: ['1A', '0A', 'λ'] },
+            { lhs: 'B', alts: ['0B', 'λ'] },
+            { lhs: 'C', alts: ['1C', 'λ'] },
+            { lhs: 'D', alts: ['111', '00', '101'] },
+            { lhs: 'E', alts: ['101', '01', '000'] },
+            { lhs: 'F', alts: ['101F', '000F', 'λ'] },
         ],
         terminals: ['0', '1'],
-        nonTerminals: ['S', 'A', 'B', 'C', 'D', 'E']
+        nonTerminals: ['S', 'A', 'B', 'C', 'D', 'E', 'F']
     }
 }
 
