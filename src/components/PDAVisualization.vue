@@ -1,6 +1,6 @@
 <script setup>
-import pdaregex1 from '../assets/pdaregex1.png'
-import pdaregex2 from '@/assets/pdaregex2.png'
+import Regex1 from '../assets/Regex1.jpg'
+import Regex2 from '@/assets/Regex2.png'
 
 defineProps({
     problemId: { type: Number, required: true }
