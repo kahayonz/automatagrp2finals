@@ -22,7 +22,7 @@ const REGEX_MAP = {
         <span class="title">Problem {{ problemId }}</span>
       </div>
       <div class="header-right">
-        <span class="attribution">Assigned by Luis (Regex 1) & Marc (Regex 2)</span>
+        <span class="attribution">Assigned to Luis (Regex 1) & Marc (Regex 2)</span>
       </div>
     </div>
 
@@ -39,11 +39,11 @@ const REGEX_MAP = {
       </div>
       <div class="image-viewport">
         <div v-if="problemId === 1">
-          <img :src="pdaregex1" alt="PDA for Regex 1" class="pda-image" />
+          <img :src="Regex1" alt="PDA for Regex 1" class="pda-image" />
         </div>
         
         <div v-else-if="problemId === 2">
-          <img :src="pdaregex2" alt="PDA for Regex 2" class="pda-image" />
+          <img :src="Regex2" alt="PDA for Regex 2" class="pda-image" />
         </div>
       </div>
     </div>
